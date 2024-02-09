@@ -13,6 +13,11 @@ jobs:
         with:
           aws-region: us-east-2
           role-to-assume: arn:aws:iam::339713148266:role/github-action
+      - name: Terraform init process
+        run: terraform init
+      - name : Terraform plan
+        run: terraform plan
+      
           
          
       
