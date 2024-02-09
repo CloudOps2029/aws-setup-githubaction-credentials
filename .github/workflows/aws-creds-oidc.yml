@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: us-east-2
+          role-to-assume: arn:aws:iam::339713148266:role/github-action
+      -  run: |
+          Install-Module -Name AWS.Tools.Installer -Force
+          Get-EC2Vpc
+         shell: pwsh
+          
+         
+      
