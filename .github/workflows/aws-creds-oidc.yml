@@ -8,6 +8,8 @@ jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: terraform clone
+        uses: actions/checkout@v4
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
